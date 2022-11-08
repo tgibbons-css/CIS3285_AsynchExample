@@ -23,7 +23,7 @@ namespace CIS3285_AsynchExample
         // This task returns a int since it waits for the value
         public int RunThingsTask()
         {
-            var task = Task.Run(() => LongProcess());
+            Task<int> task = Task.Run(() => LongProcess());
             task.Wait();
             int value =  task.Result;
 

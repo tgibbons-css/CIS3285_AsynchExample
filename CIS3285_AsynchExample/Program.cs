@@ -11,19 +11,26 @@ namespace CIS3285_AsynchExample
         {
             Console.WriteLine("Starting Samples");
 
-            //SyncClass mySyncClass = new SyncClass();
-            //mySyncClass.RunThings();
+            // This first examples are from https://www.tutorialsteacher.com/articles/asynchronous-programming-with-async-await-task-csharp
+            SyncClass mySyncClass = new SyncClass();
+            mySyncClass.RunThings();
 
             //AsyncClass myAsyncClass = new AsyncClass();
             //myAsyncClass.RunThings();
 
             AsyncReturnClass myAsyncReturn = new AsyncReturnClass();
             // === RunThingsAsync returns a future value which must be awaited
-            //int val = await myAsyncReturn.RunThingsAsync();
+            //int value = await myAsyncReturn.RunThingsAsync();
             // === RunThingsTask starts up a task and waits for it and returns a int
-            int val =  myAsyncReturn.RunThingsTask();
+            //int value =  myAsyncReturn.RunThingsTask();
+            //Console.WriteLine("Value returns = "+value);
 
-            Console.WriteLine("Value returns = "+val);
+            // This is from Microsoft's tutorial -- https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/
+            //BreakfastSync myBreakfast = new BreakfastSync();
+            //myBreakfast.MakeBreakfast();
+
+            //BreakfastAsync myBreakfast = new BreakfastAsync();
+            //myBreakfast.MakeBreakfastAsync();
 
             Console.WriteLine("Done with Samples");
             Console.ReadLine();         // keep screen up
